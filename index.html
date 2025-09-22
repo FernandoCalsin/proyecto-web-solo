@@ -3,50 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pronunciación y Letra de Canciones</title>
+    <title>LingoTune</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Pronunciación y Letra de Canciones</h1>
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="YouTube video player" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    </header>
 
-    <div class="main-container">
-        <div class="panel letra">
-            <h2>Letra Original</h2>
-            <pre>
-[Verse 1]
-We're no strangers to love
-You know the rules and so do I
-A full commitment's what I'm thinking of
-You wouldn't get this from any other guy
-            </pre>
-        </div>
 
-        <div class="panel pronunciacion">
-            <h2>Pronunciación (Figurada)</h2>
-            <pre>
-[Vers 1]
-Wir no streinyers tu lov
-Yu nou de ruls and so du ai
-A ful comitments uats aim zinking of
-Yu wudent get dis from eni ader gai
-            </pre>
+    <!-- Barra superior con botón de opciones y búsqueda -->
+    <div class="top-bar">
+        <div class="options-menu">
+            <button id="optionsBtn" class="modern-btn">☰ Agregar</button>
+            <div id="optionsDropdown" class="dropdown-content">
+                <a href="#">Solo letra</a>
+                <a href="#">letra y Pronunciacion</a>
+                <a href="#">Datos de la cancion</a>
+            </div>
         </div>
+        <form id="searchForm" class="search-box" autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Buscar canción..." />
+            <button type="submit" class="search-btn">🔍</button>
+        </form>
     </div>
 
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="youtube-url">
-        Ver en YouTube
-    </a>
-
     <script src="script.js"></script>
-</body>
+    <h1>LingoTune</h1>
+
+
 </html>
