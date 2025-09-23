@@ -1,3 +1,17 @@
+.mi-gif2{
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    left: auto;
+    width: 200px;
+    transform: scaleX(-1); /* Reflejar como espejo */
+}
+.mi-gif{
+    position: absolute;
+    top: 50px;
+    left: 100px;        
+    width: 200px;     
+}
 /* Bajar más el buscador y hacer el input más largo */
 .search-box-below-logo {
     position: absolute;
