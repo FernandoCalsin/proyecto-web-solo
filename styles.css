@@ -1,3 +1,14 @@
+/* Centrar logo en la pantalla */
+.logo-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    margin: 0 auto;
+    z-index: 100;
+    width : 650px;
+}
 /* Barra superior y sistema de búsqueda */
 .top-bar {
     display: flex;
@@ -107,12 +118,10 @@ body {
 .dropdown-content a:hover {
     background: #f1f5fa;
 }
-
-h1 {
-    color: #222;
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding-top: 100px; /* Espacio para la barra superior */
 }
