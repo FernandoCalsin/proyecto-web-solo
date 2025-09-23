@@ -6,17 +6,15 @@
     transform: translate(-50%, 0);
     z-index: 101;
 }
-
 .search-input-large {
     width: 400px;
     font-size: 1.3rem;
     padding: 12px 18px;
 }
-
 /* Estilos para el buscador grande debajo del logo */
 .search-box-large {
     margin-top: 30px;
-    padding: 12px 24px;
+    padding: 12px 24px 12px 24px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     border-radius: 40px;
 }
@@ -27,7 +25,6 @@
     font-size: 2rem;
     border-radius: 50%;
 }
-
 /* Centrar logo en la pantalla */
 .logo-center {
     position: absolute;
@@ -39,7 +36,6 @@
     z-index: 100;
     width : 650px;
 }
-
 /* Barra superior y sistema de búsqueda */
 .top-bar {
     display: flex;
@@ -49,7 +45,8 @@
     top: 20px;
     left: 0;
     width: 100%;
-    box-sizing: border-box; /* corregido */
+    padding :border-box;
+    z-index: 1100;
 }
 
 .search-box {
@@ -61,7 +58,6 @@
     padding: 2px 8px 2px 16px;
 }
 
-/* Si no usarás inputs pequeños puedes borrar esta regla */
 .search-box input[type="text"] {
     border: none;
     outline: none;
@@ -89,13 +85,11 @@
 .search-btn:hover {
     background: #2563eb;
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: black;
-    color: white;
-    padding-top: 100px; /* Espacio para la barra superior */
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 .options-menu {
@@ -113,6 +107,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: background 0.2s;
 }
+
 .modern-btn:hover {
     background: #2563eb;
 }
@@ -132,11 +127,13 @@ body {
     overflow: hidden;
     z-index: 1002;
 }
+
 .dropdown-content.show {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scale(1);
 }
+
 .dropdown-content a {
     color: #333;
     padding: 12px 18px;
@@ -144,6 +141,14 @@ body {
     display: block;
     transition: background 0.2s;
 }
+
 .dropdown-content a:hover {
     background: #f1f5fa;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding-top: 100px; /* Espacio para la barra superior */
 }

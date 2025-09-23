@@ -1,3 +1,17 @@
+// Redirigir a cancion.html con el nombre de la canción
+document.addEventListener('DOMContentLoaded', function() {
+	const form = document.getElementById('searchForm');
+	if (form) {
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			const input = document.getElementById('searchInput');
+			const nombre = encodeURIComponent(input.value.trim());
+			if (nombre) {
+				window.location.href = `cancion.html?nombre=${nombre}`;
+			}
+		});
+	}
+});
 // Sistema de búsqueda: alerta con el texto buscado
 document.addEventListener('DOMContentLoaded', function() {
 	var searchForm = document.getElementById('searchForm');
