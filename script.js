@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		searchForm.addEventListener('submit', function(e) {
 			e.preventDefault();
 			var query = searchInput.value.trim();
-			if (query) {
-				alert('Buscando: ' + query);
-			}
 		});
 	}
 });
