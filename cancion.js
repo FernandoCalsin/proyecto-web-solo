@@ -4,13 +4,17 @@ const canciones = {
         titulo: "Imagine",
         artista: "John Lennon",
         letra: `Imagine there's no heaven\nIt's easy if you try\nNo hell below us\nAbove us only sky...`,
-        imagen: "imagenes/imagine.jpg"
+        imagen: "imagenes/imagine.jpg",
+        youtube: "09LTT0xwdfw",
+        pronunciacion: `Imáyin derz no jeven\nIts isi if yu trai\nNo jel bilou as\nAbov as onli skai...`
     },
     "Yesterday": {
         titulo: "Yesterday",
         artista: "The Beatles",
         letra: `Yesterday\nAll my troubles seemed so far away...`,
-        imagen: "imagenes/yesterday.jpg"
+        imagen: "imagenes/yesterday.jpg",
+        youtube: "NrgmdOz227I",
+        pronunciacion: `Yésterdei\nOl mai trobols simd so far awéi...`
     },
     // Agrega más canciones aquí
 };
@@ -27,10 +31,19 @@ window.addEventListener('DOMContentLoaded', function() {
     if (nombreCancion && canciones[nombreCancion]) {
         const cancion = canciones[nombreCancion];
         contenedor.innerHTML = `
-            <h1>${cancion.titulo}</h1>
-            <h2>${cancion.artista}</h2>
-            <img src="${cancion.imagen}" alt="${cancion.titulo}" style="max-width:300px;display:block;margin:20px auto;">
-            <pre style="white-space:pre-wrap;font-size:1.2em;">${cancion.letra}</pre>
+        <div class="contenedor-video">
+            <iframe width="500" height="280" src="https://www.youtube.com/embed/${cancion.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="caja-letra-pron">
+            <div class="caja-letra">
+                <h3>letra de la cancion</h3>
+                <pre style="white-space:pre-wrap;font-size:1.1em;text-align:left;">${cancion.letra}</pre>
+            </div>
+            <div class="caja-pron">
+                <h3>pronunciacion</h3>
+                <pre style="white-space:pre-wrap;font-size:1.1em;text-align:left;">${cancion.pronunciacion}</pre>
+            </div>
+        </div>
         `;
     } else {
         contenedor.innerHTML = `<h2>Canción no encontrada</h2>`;
