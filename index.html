@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingoTune</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingoTune</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Barra superior con botón de opciones y búsqueda -->
-    <header>
-        <img class="logo-center" src="imagenes/logo1.png" alt="Logo">
-    </header>
+
+  <!-- Encabezado con logo y buscador -->
+  <header>
     <div class="top-bar"></div>
-    <img src="imagenes/fire-base.gif" alt="Un GIF animado para mi página" class="base-gif">
-    <img src="imagenes/menMetal.gif" alt="Un GIF animado para mi página" class="mi-gif2">
-    <img src="imagenes/menMetal.gif" alt="Un GIF animado para mi página" class="mi-gif">
-    
+    <img class="logo-center" src="imagenes/logo1.png" alt="Logo LingoTune">
+
     <form id="searchForm" class="search-box search-box-large search-box-below-logo" autocomplete="off">
-        <input type="text" id="searchInput" class="search-input-large" placeholder="Buscar canción..." />
-        <button type="submit" class="search-btn search-btn-large">🔍</button>
+      <label for="searchInput" class="visually-hidden">Buscar canción</label>
+      <input type="text" id="searchInput" class="search-input-large" placeholder="Buscar canción..." />
+      <button type="submit" class="search-btn search-btn-large">🔍</button>
     </form>
-    <script src="script.js"></script>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="animaciones">
+      <img src="imagenes/menMetal.gif" alt="Animación personaje metal" class="mi-gif2">
+      <img src="imagenes/menMetal.gif" alt="Animación personaje metal" class="mi-gif">
+    </section>
+  </main>
+
+  <!-- GIF de fuego fijo abajo -->
+  <img src="imagenes/fire-base.gif" alt="Animación de fuego" class="base-gif">
+
+  <footer>
+    <p>&copy; 2025 LingoTune</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
