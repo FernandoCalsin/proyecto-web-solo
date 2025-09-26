@@ -4,8 +4,8 @@
   left: 0;
   bottom: 0;
   width: 100vw; 
-  height: 700px;  
-  z-index: 1100;
+  height: 100%;  
+  z-index: 200;
   pointer-events: none;    
   object-fit: cover;       
   display: block;
@@ -193,4 +193,16 @@ body {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+footer {
+  position: fixed;
+  bottom: 10px;      
+  left: 10px;           
+  background: transparent; 
+  color: #001f3f;       
+  text-align: left;  
+  padding: 0;       
+  margin: 0;          
+  z-index: 201;    
+  font-size: 0.9rem; 
 }
