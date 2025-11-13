@@ -1,40 +1,106 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LingoTune</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="pagina web de busqueda de letras de canciones">
+  <meta name="author" content="Calsin Sucasaire Luis Fernando">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>lingotune</title>
 </head>
-<body>
-
-  <!-- Encabezado con logo y buscador -->
-  <header>
-    <div class="top-bar"></div>
-    <img class="logo-center" src="imagenes/logo1.png" alt="Logo LingoTune">
-
-    <form id="searchForm" class="search-box search-box-large search-box-below-logo" autocomplete="off">
-      <label for="searchInput" class="visually-hidden">Buscar canción</label>
-      <input type="text" id="searchInput" class="search-input-large" placeholder="Buscar canción..." />
-      <button type="submit" class="search-btn search-btn-large">🔍</button>
-    </form>
+<body> 
+  <header class="header">
+    <div class="container">
+      <div class="btn-menu">
+        <label for="btn-menu" class="icon-menu">☰</label>
+    </div>
+      <div class="logo">
+        <h1>LingoTune</h1>
+      </div>
+      <nav class="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Blog</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </div>    
   </header>
-
-  <!-- Contenido principal -->
+  <input type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <li><a href="canciones/index.html">canciones</a></li>
+        <li><a href="artistas/index.html">artistas</a></li>
+        <li><a href="albunes/index.html">albunes</a></li>
+        <li><a href="playlist/index.html">playlist</a></li>
+        <li><a href="blog/index.html">blog</a></li>
+      </nav>
+      <label for="btn-menu" class="icon-equis">X</label>
+    </div>
+  </div>
   <main>
-    <section class="animaciones">
-      <img src="imagenes/menMetal.gif" alt="Animación personaje metal" class="mi-gif2">
-      <img src="imagenes/menMetal.gif" alt="Animación personaje metal" class="mi-gif">
+    <section id="Lo-mas-visto">
+      <h2>Lo mas visto</h2>
+      <article>
+        <!--cada top estara en una caja rectangular en la izquierda el numero luego el nombre de la cancion-->
+        <!--enumerar con un numero grande cada top-->
+        <!--una lista de dies canciones las mas buscadas avajo con nombre del autor-->
+      </article>
+    </section>
+    <section id="Playlists-destadas">
+      <h2>Playlist destacadas</h2>
+      <article>
+        <!--todo estara en una caja clicleable que dirije a la play list-->
+        <!--imagenes con las play list favoritas-->
+        <!--titulo de las play list-->
+      </article>
+    </section>
+    <section id="Lee-en-el-blog">
+      <h2>Lee en el blog</h2>
+      <article>
+        <!--todo estara en una caja clicleable que dirigira a los blogs-->
+        <!--imagenes de los blogs-->
+        <!--el titulo del blog-->
+      </article>
+    </section>
+    <section id="Canciones-recomendadas">
+      <h2>Canciones recomendadas</h2>
+      <article>
+        <!--en una caja el contenido-->
+        <!-- una pequeña imagen circular  de la cancion  su
+         albun al que pertenece -->
+        <!--nombre de la cancion-->
+      </article>
+    </section>
+    <section id="Albunes-recomendados">
+      <h2>Albunes recomendados</h2>
+      <article>
+        <!--contenido en caja-->
+        <!--una imagen del albun-->
+        <!--titulo del album con su autor-->
+      </article>
+    </section>
+    <section id="Artistas-recomendados">
+      <h2>Artistas recomendados</h2>
+      <article>
+        <!--cada uno en una caja rectangular-->
+        <!--una imagen circular a la derecha del artista-->
+        <!--el nombre del artista avajo genero-->
+      </article>
+    </section>
+    <section id="canciones-lista">
+      <nav>
+        <ul>          
+        </ul>
+      </nav>
     </section>
   </main>
-
-  <!-- GIF de fuego fijo abajo -->
-  <img src="imagenes/fire-base.gif" alt="Animación de fuego" class="base-gif">
-
+  <aside>
+    <h1>barra lateral opcional</h1>
+  </aside>
   <footer>
-    <p>&copy; 2025 LingoTune</p>
+    <h1>pie de pagina</h1>
   </footer>
-
-  <script src="script.js"></script>
+  
 </body>
 </html>

@@ -40,3 +40,33 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 });
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+const lista = document.getElementById("listaComentarios");
+const btn = document.getElementById("btnEnviar");
+const txt = document.getElementById("comentarioTexto");
+
+// Si quieres guardar para que no se borren al recargar:
+let comentarios = JSON.parse(localStorage.getItem("rockComentarios")) || [];
+
+// Mostrar comentarios guardados al cargar
+renderComentarios();
+
+btn.addEventListener("click", () => {
+  if (txt.value.trim() !== "") {
+    comentarios.push(txt.value.trim());
+    txt.value = "";
+
+    // Guardar en el navegador
+    localStorage.setItem("rockComentarios", JSON.stringify(comentarios));
+
+    renderComentarios();
+  }
+});
+
+function renderComentarios() {
+  lista.innerHTML = comentarios
+    .map(c => `<div class="comentario">${c}</div>`)
+    .join("");
+}
