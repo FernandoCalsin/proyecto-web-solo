@@ -1,8 +1,9 @@
+/*  FUENTES Y RESETEO BÁSICO ---------------------------------------------------------*/
 @import url('http://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+    box-sizing:border-box;
     font-family:'Montserrat Alternates', sans-serif;
 }
 body{
@@ -10,113 +11,173 @@ body{
     background-size:100vw 100vh;
     background-repeat:no-repeat;
 }
-.capa{
-    position:absolute;
-    width:100%;
-    height:100vh;
-    background: rgba(0,0,0,0.4);
-    z-index: -1;
-    top:0;
-    left:0;
-}
-/*Estilos encabezado*/
+/*  ENCABEZADO (HEADER) ---------------------------------------------------------*/
 .header{
     width:100%;
     height:70px;
     position:fixed;
     top:0;
     left:0;
+    z-index: 10;
 }
 .container{
     width:90%;
     max-width:1200px;
     margin:auto;
 }
-.container .btn-menu, .logo{
+.btn-menu,
+.logo{
     float:left;
     line-height:70px;
 }
-.container .btn-menu label{
+.btn-menu label{
     color:#fff;
-    font-size: 25px;
-    cursor: pointer;
+    font-size:25px;
+    cursor:pointer;
 }
 .logo h1{
     color:#fff;
-    font-weight: 400;
+    font-weight:400;
     font-size:22px;
-    margin-left: 10px;
+    margin-left:10px;
 }
-.container .menu{
+.menu{
     float:right;
-    line-height: 70px;
+    line-height:70px;
 }
-.container .menu a{
+.menu a{
     display:inline-block;
     padding:15px 10px;
-    line-height: normal;
     text-decoration:none;
     color:#fff;
-    transition:all 0.3s ease;
+    transition:.3s ease;
+    font-size:15px;
     border-bottom:2px solid transparent;
-    font-size: 15px;
 }
-.container .menu a:hover{
-    border-bottom: 2px solid #c7c7c7;
-    padding: 5px 10px;
+.menu a:hover{
+    border-bottom:2px solid #c7c7c7;
+    padding-bottom:5px;
 }
-/*Menu lateral*/
-#btn-menu{
-    display:none;
-}
+
+/*  MENÚ LATERAL DESPLEGABLE ------------------------------------------------------*/
+#btn-menu{ display:none; }
 .container-menu{
-    position:absolute;
-    background:rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    transition: all 500ms ease;
-    opacity: 0;
-    visibility: hidden;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,.5);
+    backdrop-filter: blur(2px);
+    opacity:0;
+    visibility:hidden;
+    transition:.4s;
+    z-index:9;
 }
 #btn-menu:checked ~ .container-menu{
     opacity:1;
     visibility:visible;
 }
 .cont-menu{
-    width: 100%;
-    max-width: 250px;
-    background: 1c1c1c;
-    height: 100vh;
-    position: relative;
-    transition: all 500ms ease;
+    width:250px;
+    height:100vh;
+    background:#1c1c1c;
+    padding-top:60px;
     transform:translateX(-100%);
+    transition:.4s;
 }
-#btn-menu:checked ~ .container-menu .cont-menu{    
-    transform:translateX(0%);
-}
-.cont-menu nav{
-    transform: translateY(15%);
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform:translateX(0);
 }
 .cont-menu nav a{
     display:block;
-    text-decoration: none;
-    padding: 20px;
-    color: #c7c7c7;
-    border-left: 5px solid transparent;
-    transition: all 400ms ease;
+    padding:20px;
+    text-decoration:none;
+    color:#c7c7c7;
+    border-left:5px solid transparent;
+    transition:.3s;
 }
 .cont-menu nav a:hover{
-    border-left: 5px solid #c7c7c7;
-    background: #1f1f1f;
+    border-left:5px solid #c7c7c7;
+    background:#222;
 }
 .cont-menu label{
-    position: absolute;
-    right:5px;
+    position:absolute;
     top:10px;
+    right:10px;
+    font-size:18px;
     color:#fff;
     cursor:pointer;
-    font-size:18px;
 }
-/*
+/*  SECCIÓN PRINCIPAL (HERO) ------------------------------------------------------------*/
+.hero-container{
+    margin-top:120px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+    padding:20px 0;
+}
+/*  CAJAS LATERALES  -------------------------------------------------------------------*/
+.side-box{
+    width:260px;
+    min-height:350px;
+    border:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    text-align:center;
+    color:white;
+    font-size:20px;
+}
+.side-box img{
+    width:100%;
+    height:auto;
+}
+/*  CENTRO -------------------------------------------------------*/
+.center-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+}
+/* logo grande ---------------------------------------*/
+.logo-central{
+    width:550px;
+    height:auto;
+}
+/* BUSCADOR DEL HERO ----------------------------------------------------*/
+.search-box{
+    position:relative;
+    width:260px;
+}
+.search-box input{
+    width:100%;
+    padding:10px;
+    border:0;
+    border-radius:4px 0 0 4px;
+    outline:none;
+}
+.search-box button{
+    position:absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    width:40px;
+    background:#8b0015;
+    border:none;
+    cursor:pointer;
+    border-radius:0 4px 4px 0;
+}
+.search-box button:hover{
+    background:#5a000f;
+}
+/* FOOTER Y ASIDE (FUTURO) ------------------------------------------*/
+aside, footer{
+    margin-top:40px;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
