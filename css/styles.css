@@ -11,6 +11,7 @@ body{
     background-size:100vw 100vh;
     background-repeat:no-repeat;
 }
+
 /*  ENCABEZADO (HEADER) ---------------------------------------------------------*/
 .header{
     width:100%;
@@ -61,7 +62,9 @@ body{
 
 /*  MENÚ LATERAL DESPLEGABLE ------------------------------------------------------*/
 #btn-menu{ display:none; }
+
 .container-menu{
+    display:block;
     position:fixed;
     top:0;
     left:0;
@@ -72,9 +75,10 @@ body{
     opacity:0;
     visibility:hidden;
     transition:.4s;
-    z-index:9;
+    z-index:999;
 }
 #btn-menu:checked ~ .container-menu{
+    display: block;
     opacity:1;
     visibility:visible;
 }
@@ -85,6 +89,7 @@ body{
     padding-top:60px;
     transform:translateX(-100%);
     transition:.4s;
+    position:relative;
 }
 #btn-menu:checked ~ .container-menu .cont-menu{
     transform:translateX(0);
@@ -105,11 +110,20 @@ body{
     position:absolute;
     top:10px;
     right:10px;
-    font-size:18px;
+    font-size:24px;
     color:#fff;
     cursor:pointer;
+    z-index:1000;
+    padding:5px;
 }
-/*  SECCIÓN PRINCIPAL (HERO) ------------------------------------------------------------*/
+.icon-equis {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+/*  HERO ------------------------------------------------------------*/
 .hero-container{
     margin-top:120px;
     width:100%;
@@ -119,11 +133,9 @@ body{
     gap:40px;
     padding:20px 0;
 }
-/*  CAJAS LATERALES  -------------------------------------------------------------------*/
 .side-box{
     width:260px;
     min-height:350px;
-    border:none;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -132,23 +144,14 @@ body{
     color:white;
     font-size:20px;
 }
-.side-box img{
-    width:100%;
-    height:auto;
-}
-/*  CENTRO -------------------------------------------------------*/
+.side-box img{ width:100%; height:auto; }
 .center-box{
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:25px;
 }
-/* logo grande ---------------------------------------*/
-.logo-central{
-    width:550px;
-    height:auto;
-}
-/* BUSCADOR DEL HERO ----------------------------------------------------*/
+.logo-central{ width:550px; height:auto; }
 .search-box{
     position:relative;
     width:260px;
@@ -162,22 +165,427 @@ body{
 }
 .search-box button{
     position:absolute;
-    right:0;
-    top:0;
-    bottom:0;
+    right:0; top:0; bottom:0;
     width:40px;
     background:#8b0015;
     border:none;
     cursor:pointer;
     border-radius:0 4px 4px 0;
 }
-.search-box button:hover{
-    background:#5a000f;
-}
-/* FOOTER Y ASIDE (FUTURO) ------------------------------------------*/
+.search-box button:hover{ background:#5a000f; }
+
+/* MAIN--------------------------------------*/
+h2{ color:#fff; font-size:20px; }
+
+/* FOOTER Y ASIDE ------------------------------------------*/
 aside, footer{
     margin-top:40px;
     text-align:center;
-    color:white;
+    color:#fff;
     padding:20px;
 }
+
+/* SECCIONES GENERALES ---------------------------------------------------------*/
+.section-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  color: #fff;
+}
+.section-container h2 {
+  border-bottom: 2px solid #8b0015;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas genéricas */
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform .3s ease, background .3s ease;
+}
+.card h3 { margin-bottom: 10px; font-size: 18px; color: #fff; }
+.card p { margin-bottom: 15px; color: #c7c7c7; }
+.card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.card a:hover{ background:#5a000f; }
+.card:hover{ transform:scale(1.03); background:#222; }
+.card-footer{ display:flex; justify-content:space-between; align-items:center; }
+.mini-img{ width:40px; height:40px; border-radius:4px; margin-left:10px; object-fit:cover; }
+
+/* PLAYLIST DESTACADAS ----------------------------------------------------------*/
+.playlist-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+  transition:transform .3s ease, background .3s ease;
+}
+.playlist-card:hover{ transform:scale(1.03); background:#222; }
+.playlist-img {
+  width:100%; height:150px;
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:15px;
+}
+.playlist-card h3 { margin-bottom:8px; font-size:18px; color:#fff; }
+.playlist-card p { margin-bottom:12px; color:#c7c7c7; }
+.playlist-card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.playlist-card a:hover{ background:#5a000f; }
+
+/* BLOG ------------------------------------------------------------*/
+.blog-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:8px;
+  transition:transform .3s ease, background .3s ease;
+}
+.blog-card:hover{ transform:scale(1.03); background:#222; }
+.blog-card h3 { margin-bottom:10px; font-size:18px; color:#fff; }
+.blog-card p {
+  margin-bottom:15px;
+  color:#c7c7c7;
+  font-size:14px;
+  line-height:1.4;
+}
+.blog-card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.blog-card a:hover{ background:#5a000f; }
+
+/* CANCIONES RECOMENDADAS -------------------------------------------------------*/
+.song-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+  transition:transform .3s ease, background .3s ease;
+}
+.song-card:hover{ transform:scale(1.03); background:#222; }
+.song-img {
+  width:100%; height:150px;
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:15px;
+}
+.song-card h3 { margin-bottom:8px; font-size:18px; color:#fff; }
+.song-card p { margin-bottom:12px; color:#c7c7c7; }
+.song-card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.song-card a:hover{ background:#5a000f; }
+
+/* CANCIONES RECOMENDADAS -------------------------------------------------------*/
+.song-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+  transition:transform .3s ease, background .3s ease;
+}
+.song-card:hover{ transform:scale(1.03); background:#222; }
+.song-img {
+  width:100%; height:150px;
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:15px;
+}
+.song-card h3 { margin-bottom:8px; font-size:18px; color:#fff; }
+.song-card p { margin-bottom:12px; color:#c7c7c7; }
+.song-card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.song-card a:hover{ background:#5a000f; }
+
+/* ÁLBUMES RECOMENDADOS ---------------------------------------------------------*/
+.album-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+  transition:transform .3s ease, background .3s ease;
+}
+.album-card:hover{ transform:scale(1.03); background:#222; }
+.album-img {
+  width:100%; height:180px;
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:15px;
+}
+.album-card h3 { margin-bottom:8px; font-size:18px; color:#fff; }
+.album-card p { margin-bottom:12px; color:#c7c7c7; }
+.album-card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.album-card a:hover{ background:#5a000f; }
+
+/* ARTISTAS RECOMENDADOS --------------------------------------------------------*/
+.artist-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+  transition:transform .3s ease, background .3s ease;
+}
+.artist-card:hover{ transform:scale(1.03); background:#222; }
+.artist-img {
+  width:120px; height:120px;
+  object-fit:cover;
+  border-radius:50%; /* circular estilo avatar */
+  margin-bottom:15px;
+  border:2px solid #8b0015;
+}
+.artist-card h3 { margin-bottom:12px; font-size:18px; color:#fff; }
+.artist-card a {
+  display:inline-block;
+  padding:8px 12px;
+  background:#8b0015;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+}
+.artist-card a:hover{ background:#5a000f; }
+
+/* LISTA DE CANCIONES -----------------------------------------------------------*/
+.ranking-compact {
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+  background:#000;
+  border-radius:6px;
+  overflow:hidden;
+}
+.ranking-compact li {
+  padding:10px 15px;
+  border-bottom:1px solid #333;
+  font-size:16px;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:background .3s ease;
+}
+.ranking-compact li:last-child { border-bottom:none; }
+.ranking-compact li:hover { background:#111; }
+.rank {
+  color:#e60000;
+  font-weight:bold;
+  margin-right:8px;
+}
+.song-title { flex:1; font-weight:bold; color:#fff; }
+.artist { color:#c7c7c7; font-style:italic; }
+
+/* BARRA LATERAL ---------------------------------------------------------------*/
+/* Barra lateral oculta con flecha indicadora */
+.sidebar {
+  position: fixed;
+  right: -200px; /* completamente oculta */
+  top: 100px;
+  width: 200px;
+  background: #1c1c1c;
+  padding: 20px;
+  border-left: 2px solid #8b0015;
+  border-radius: 8px 0 0 8px;
+  color: #fff;
+  transition: right 0.3s ease; /* animación suave */
+}
+
+/* Flecha visible siempre */
+.sidebar-toggle {
+  position: absolute;
+  left: -25px; /* fuera del menú */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #fff; /* flecha blanca */
+  background: rgba(255,255,255,0.1); /* círculo transparente */
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Al pasar el mouse sobre el menú o la flecha, se despliega */
+.sidebar:hover {
+  right: 0;
+}
+
+/* Estilos internos del menú */
+.sidebar h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+}
+
+.sidebar a {
+  color: #c7c7c7;
+  text-decoration: none;
+  transition: color .3s ease;
+  font-size: 14px;
+}
+
+.sidebar a:hover {
+  color: #fff;
+}
+
+/*footer-------------------------------------------------------------------------------*/
+.footer {
+  background: #1c1c1c;
+  color: #c7c7c7;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 2px solid #8b0015;
+}
+
+.footer a {
+  color: #c7c7c7;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color .3s ease;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  filter: brightness(0) invert(1); /* iconos blancos */
+}
+
+/*suscribete------------------------------*/
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.subscribe-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.subscribe-form button {
+  padding: 10px;
+  background: #8b0015;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.subscribe-form button:hover {
+  background: #5a000f;
+}
+
+/*añadidos de emergencia---------------------------------------------------------------------------------*/
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.section-container {
+  flex: 1;
+}
+/*iniciar secion-------------------------------------*/
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.login-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.login-form button {
+  padding: 10px;
+  background: #8b0015;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.login-form button:hover {
+  background: #5a000f;
+}
+

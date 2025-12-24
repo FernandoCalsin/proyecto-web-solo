@@ -25,15 +25,15 @@
 
       <nav class="menu">
         <a href="#">Inicio</a>
-        <a href="#">Nosotros</a>
-        <a href="#">Blog</a>
-        <a href="#">Contacto</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="blog.html">Blog</a>
+        <a href="suscribete.html">Suscribete</a>        
+        <a href="login.html">Iniciar secion</a>
       </nav>
 
     </div>
   </header>
 
-  <!-- MENÚ LATERAL -->
   <input type="checkbox" id="btn-menu">
 
   <div class="container-menu">
@@ -49,7 +49,6 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <section class="hero-container">
 
     <div class="side-box left-box">
@@ -71,56 +70,246 @@
 
   </section>
 
-  <!-- MAIN CONTENT -->
   <main>
+    
+    <section id="Lo-mas-visto" class="section-container">
 
-    <section id="Lo-mas-visto">
       <h2>Lo más visto</h2>
-      <article></article>
-    </section>
+      <div class="grid">
+        <article class="card">
+          <h3>Bohemian Rhapsody</h3>
+          <p>Queen</p>
+          <div class="card-footer">
+            <a href="canciones/bohemian.html">Ver letra</a>
+            <img src="imagenes/bohemian.jpg" alt="Bohemian Rhapsody" class="mini-img">
+          </div>
+        </article>
 
-    <section id="Playlists-destadas">
+        <article class="card">
+          <h3>Imagine</h3>
+          <p>John Lennon</p>
+          <div class="card-footer">
+            <a href="canciones/imagine.html">Ver letra</a>
+            <img src="imagenes/imagine.jpg" alt="Imagine" class="mini-img">
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Smells Like Teen Spirit</h3>
+          <p>Nirvana</p>
+          <div class="card-footer">
+            <a href="canciones/teen-spirit.html">Ver letra</a>
+            <img src="imagenes/nirvana.jpg" alt="Nirvana" class="mini-img">
+          </div>
+        </article>
+
+        <!-- Nuevas bandas -->
+        <article class="card">
+          <h3>Demolisher</h3>
+          <p>Slaughter to Prevail</p>
+          <div class="card-footer">
+            <a href="canciones/demolisher.html">Ver letra</a>
+            <img src="imagenes/slaughter.jpg" alt="Slaughter to Prevail" class="mini-img">
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Fiesta Pagana</h3>
+          <p>Mägo de Oz</p>
+          <div class="card-footer">
+            <a href="canciones/fiesta-pagana.html">Ver letra</a>
+            <img src="imagenes/mago.jpg" alt="Mägo de Oz" class="mini-img">
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Enter Sandman</h3>
+          <p>Metallica</p>
+          <div class="card-footer">
+            <a href="canciones/enter-sandman.html">Ver letra</a>
+            <img src="imagenes/metallica.jpg" alt="Metallica" class="mini-img">
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="Playlists-destacadas" class="section-container">
       <h2>Playlists destacadas</h2>
-      <article></article>
+      <div class="grid">
+        <article class="playlist-card">
+          <img src="imagenes/rock-fire.gif" alt="Rock playlist" class="playlist-img">
+          <h3>Rock eterno</h3>
+          <p>20 canciones</p>
+          <a href="playlist/rock.html">Explorar</a>
+        </article>
+          
+        <article class="playlist-card">
+          <img src="imagenes/guitarRock.gif" alt="Pop playlist" class="playlist-img">
+          <h3>Pop latino</h3>
+          <p>15 canciones</p>
+          <a href="playlist/pop.html">Explorar</a>
+        </article>
+
+    <article class="playlist-card">
+      <img src="imagenes/fire-base.gif" alt="Metal playlist" class="playlist-img">
+      <h3>Metal clásico</h3>
+      <p>18 canciones</p>
+      <a href="playlist/metal.html">Explorar</a>
+    </article>
+
+        <article class="playlist-card">
+          <img src="imagenes/slayer.gif" alt="Thrash Metal playlist" class="playlist-img">
+          <h3>Thrash Metal</h3>
+          <p>22 canciones</p>
+          <a href="playlist/thrash.html">Explorar</a>
+        </article>
+
+        <article class="playlist-card">
+          <img src="imagenes/metallica.gif" alt="Metallica playlist" class="playlist-img">
+          <h3>Metallica Essentials</h3>
+          <p>25 canciones</p>
+          <a href="playlist/metallica.html">Explorar</a>
+        </article>
+
+        <article class="playlist-card">
+          <img src="imagenes/slaughter.gif" alt="Deathcore playlist" class="playlist-img">
+          <h3>Deathcore brutal</h3>
+          <p>15 canciones</p>
+          <a href="playlist/deathcore.html">Explorar</a>
+        </article>
+
+        <article class="playlist-card">
+          <img src="imagenes/mago.gif" alt="Mägo de Oz playlist" class="playlist-img">
+          <h3>Folk Metal</h3>
+          <p>18 canciones</p>
+          <a href="playlist/folk.html">Explorar</a>
+        </article>
+
+        <article class="playlist-card">
+          <img src="imagenes/ironMaiden.gif" alt="Iron Maiden playlist" class="playlist-img">
+          <h3>Heavy Metal</h3>
+          <p>20 canciones</p>
+          <a href="playlist/heavy.html">Explorar</a>
+        </article>
+      </div>
     </section>
 
-    <section id="Lee-en-el-blog">
-      <h2>Lee en el blog</h2>
-      <article></article>
-    </section>
-
-    <section id="Canciones-recomendadas">
+    <section id="Canciones-recomendadas" class="section-container">
       <h2>Canciones recomendadas</h2>
-      <article></article>
+      <div class="grid">
+        <article class="song-card">
+          <img src="imagenes/imagine.jpg" alt="Imagine" class="song-img">
+          <h3>Imagine</h3>
+          <p>John Lennon</p>
+          <a href="canciones/imagine.html">Ver letra</a>
+        </article>
+
+        <article class="song-card">
+          <img src="imagenes/bohemian.jpg" alt="Bohemian Rhapsody" class="song-img">
+          <h3>Bohemian Rhapsody</h3>
+          <p>Queen</p>
+          <a href="canciones/bohemian.html">Ver letra</a>
+        </article>
+
+        <article class="song-card">
+          <img src="imagenes/nirvana.jpg" alt="Smells Like Teen Spirit" class="song-img">
+          <h3>Smells Like Teen Spirit</h3>
+          <p>Nirvana</p>
+          <a href="canciones/teen-spirit.html">Ver letra</a>
+        </article>
+      </div>
     </section>
 
-    <section id="Albunes-recomendados">
+
+    <section id="Albunes-recomendados" class="section-container">
       <h2>Álbumes recomendados</h2>
-      <article></article>
+      <div class="grid">
+        <article class="album-card">
+          <img src="imagenes/backinblack.jpg" alt="Back in Black" class="album-img">
+          <h3>Back in Black</h3>
+          <p>AC/DC</p>
+          <a href="albumes/backinblack.html">Ver álbum</a>
+        </article>
+
+        <article class="album-card">
+          <img src="imagenes/abbeyroad.jpg" alt="Abbey Road" class="album-img">
+          <h3>Abbey Road</h3>
+          <p>The Beatles</p>
+          <a href="albumes/abbeyroad.html">Ver álbum</a>
+        </article>
+
+        <article class="album-card">
+          <img src="imagenes/nevermind.jpg" alt="Nevermind" class="album-img">
+          <h3>Nevermind</h3>
+          <p>Nirvana</p>
+          <a href="albumes/nevermind.html">Ver álbum</a>
+        </article>
+      </div>
     </section>
 
-    <section id="Artistas-recomendados">
+
+    <section id="Artistas-recomendados" class="section-container">
       <h2>Artistas recomendados</h2>
-      <article></article>
+      <div class="grid">
+        <article class="artist-card">
+          <img src="imagenes/queen.jpg" alt="Queen" class="artist-img">
+          <h3>Queen</h3>
+          <a href="artistas/queen.html">Ver perfil</a>
+        </article>
+
+        <article class="artist-card">
+          <img src="imagenes/johnlennon.jpg" alt="John Lennon" class="artist-img">
+          <h3>John Lennon</h3>
+          <a href="artistas/johnlennon.html">Ver perfil</a>
+        </article>
+
+        <article class="artist-card">
+          <img src="imagenes/nirvana.jpg" alt="Nirvana" class="artist-img">
+          <h3>Nirvana</h3>
+          <a href="artistas/nirvana.html">Ver perfil</a>
+        </article>
+      </div>
     </section>
 
-    <section id="canciones-lista">
-      <nav>
-        <ul></ul>
-      </nav>
+    <section id="canciones-lista" class="section-container">
+      <h2>Lista de canciones rock & metal</h2>
+      <ul class="ranking-compact">
+        <li><span class="rank">1.</span> Master of Puppets — <span class="artist">Metallica</span></li>
+        <li><span class="rank">2.</span> Fear of the Dark — <span class="artist">Iron Maiden</span></li>
+        <li><span class="rank">3.</span> Paranoid — <span class="artist">Black Sabbath</span></li>
+        <li><span class="rank">4.</span> Ace of Spades — <span class="artist">Motörhead</span></li>
+        <li><span class="rank">5.</span> Smoke on the Water — <span class="artist">Deep Purple</span></li>
+        <li><span class="rank">6.</span> Enter Sandman — <span class="artist">Metallica</span></li>
+      </ul>
     </section>
-
   </main>
 
-  <!-- ASIDE -->
-  <aside>
-    <h1>Barra lateral opcional</h1>
+  <aside class="sidebar">
+    <div class="sidebar-toggle">➤</div>
+    <h2>Secciones</h2>
+    <nav>
+      <ul>
+        <li><a href="#Lo-mas-visto">Lo más visto</a></li>
+        <li><a href="#Playlists-destacadas">Playlists destacadas</a></li>
+        <li><a href="#Lee-en-el-blog">Lee en el blog</a></li>
+        <li><a href="#Canciones-recomendadas">Canciones recomendadas</a></li>
+        <li><a href="#Albunes-recomendados">Álbumes recomendados</a></li>
+        <li><a href="#Artistas-recomendados">Artistas recomendados</a></li>
+        <li><a href="#canciones-lista">Lista de canciones</a></li>
+      </ul>
+    </nav>
   </aside>
 
-  <!-- FOOTER -->
-  <footer>
-    <h1>Pie de página</h1>
-  </footer>
+    <footer class="footer">
+      <p>Síguenos en:</p>
+      <div class="social-links">
+        <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+      </div>
+      <p>&copy; 2025 Mi Sitio de Música</p>
+    </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
