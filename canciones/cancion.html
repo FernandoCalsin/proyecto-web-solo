@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingoTune - Letras</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>  
+    .lyrics-container {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    .song-header h1 { color: #8b0015; font-size: 3rem; margin-bottom: 0.5rem; }
+    .song-header h2 { color: #c7c7c7; font-weight: 300; }
+    .song-lyrics {
+      margin-top: 40px;
+      line-height: 1.8;
+      font-size: 1.2rem;
+      white-space: pre-line;
+    }
+    .song-actions { margin-top: 50px; display: flex; gap: 20px; justify-content: center; }
+    .btn {
+      padding: 10px 25px;
+      background: #8b0015;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #5a000f; }
+  </style>
+</head>
+<body>
+
+  <main class="lyrics-container">
+    <section class="song-header">
+      <h1 id="song-title">Cargando título...</h1>
+      <h2 id="song-artist">Artista</h2>
+      <p id="song-album">Álbum: </p>
+    </section>
+
+    <section class="song-lyrics">
+      <p id="song-lyrics-text">Buscando letra...</p>
+    </section>
+
+    <section class="song-actions">
+      <button class="btn" id="btn-back">Volver al Inicio</button>
+      <button class="btn" id="btn-translation">Ver traducción</button>
+    </section>
+  </main>
+  
+    <script src="../js/letras.js"></script>
+    <script src="../js/song.js"></script>
+
+</body>
+</html>

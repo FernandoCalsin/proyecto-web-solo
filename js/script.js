@@ -1,27 +1,47 @@
-// Redirigir a cancion.html con el nombre de la canción
+// js/script.js
+
 document.addEventListener('DOMContentLoaded', function() {
-	const form = document.getElementById('searchForm');
-	if (form) {
-		form.addEventListener('submit', function(e) {
-			e.preventDefault();
-			const input = document.getElementById('searchInput');
-			const nombre = encodeURIComponent(input.value.trim());
-			if (nombre) {
-				window.location.href = `cancion.html?nombre=${nombre}`;
-			}
-		});
-	}
-});
-// Sistema de búsqueda: alerta con el texto buscado
-document.addEventListener('DOMContentLoaded', function() {
-	var searchForm = document.getElementById('searchForm');
-	var searchInput = document.getElementById('searchInput');
-	if (searchForm && searchInput) {
-		searchForm.addEventListener('submit', function(e) {
-			e.preventDefault();
-			var query = searchInput.value.trim();		
-		});
-	}
+    // 1. LÓGICA DEL BUSCADOR
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = encodeURIComponent(searchInput.value.trim());
+            if (nombre) {
+                // IMPORTANTE: Como el JS está en la carpeta /js, 
+                // la ruta debe apuntar a canciones/cancion.html
+                window.location.href = `canciones/cancion.html?nombre=${nombre}`;
+            }
+        });
+    }
+
+    // 2. LÓGICA DE COMENTARIOS (Solo si existen los elementos en el HTML)
+    const lista = document.getElementById("listaComentarios");
+    const btnEnviar = document.getElementById("btnEnviar");
+    const txtComentario = document.getElementById("comentarioTexto");
+
+    if (lista && btnEnviar && txtComentario) {
+        let comentarios = JSON.parse(localStorage.getItem("rockComentarios")) || [];
+        
+        const renderComentarios = () => {
+            lista.innerHTML = comentarios
+                .map(c => `<div class="comentario">${c}</div>`)
+                .join("");
+        };
+
+        renderComentarios();
+
+        btnEnviar.addEventListener("click", () => {
+            if (txtComentario.value.trim() !== "") {
+                comentarios.push(txtComentario.value.trim());
+                txtComentario.value = "";
+                localStorage.setItem("rockComentarios", JSON.stringify(comentarios));
+                renderComentarios();
+            }
+        });
+    }
 });
 // Botón moderno de opciones: mostrar/ocultar menú
 document.addEventListener('DOMContentLoaded', function() {
