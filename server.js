@@ -1,15 +1,19 @@
 // server.js
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const { Pool } = require("pg");
 
 const app = express();
 app.use(bodyParser.json());
 
-// Conexión a PostgreSQL (Render te da DATABASE_URL)
+// Servir archivos estáticos (frontend)
+app.use(express.static(path.join(__dirname)));
+
+// Conexión a PostgreSQL (usa DATABASE_URL de tu hosting)
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false } // importante en Render
+  ssl: { rejectUnauthorized: false }
 });
 
 // Ruta para suscripción
@@ -50,4 +54,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Servidor corriendo en puerto 3000"));
+// Usar el puerto asignado por Koyeb o 3000 en local
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
