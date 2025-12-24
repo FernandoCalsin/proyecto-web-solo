@@ -8,12 +8,26 @@ const app = express();
 app.use(bodyParser.json());
 
 // Servir archivos estáticos (frontend)
-app.use(express.static(path.join(__dirname)));
+// Cambia "public" por la carpeta donde tengas tu HTML/CSS/JS
+app.use(express.static(path.join(__dirname, "public")));
 
-// Conexión a PostgreSQL
+// Conexión a PostgreSQL (Render/Supabase)
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+// Ruta de prueba para verificar conexión
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json({ time: result.rows[0] });
+  } catch (err) {
+    console.error("Error en conexión DB:", err);
+    res.status(500).json({ message: "Error conectando a la base de datos" });
+  }
 });
 
 // Rutas
@@ -29,7 +43,7 @@ app.post("/subscribe", async (req, res) => {
     if (err.code === "23505") {
       res.status(400).json({ message: "Este correo ya está registrado." });
     } else {
-      console.error(err);
+      console.error("Error en /subscribe:", err);
       res.status(500).json({ message: "Error en el servidor" });
     }
   }
@@ -48,10 +62,13 @@ app.post("/login", async (req, res) => {
       res.status(401).json({ message: "Credenciales incorrectas" });
     }
   } catch (err) {
-    console.error(err);
+    console.error("Error en /login:", err);
     res.status(500).json({ message: "Error en el servidor" });
   }
 });
 
+// Puerto dinámico para Render
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
+});
