@@ -35,5 +35,27 @@
   <footer class="footer">
     <p>&copy; 2025 Mi Sitio de Música. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Script para enviar datos al backend -->
+  <script>
+    document.querySelector(".login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+
+      try {
+        const res = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+        alert(data.message); // muestra respuesta del servidor
+      } catch (err) {
+        alert("Error al conectar con el servidor");
+      }
+    });
+  </script>
 </body>
 </html>

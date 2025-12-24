@@ -1,0 +1,11 @@
+CREATE TABLE usuarios (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE suscriptores (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(100),
+  email VARCHAR(100) UNIQUE NOT NULL
+);

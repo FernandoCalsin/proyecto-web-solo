@@ -17,6 +17,7 @@
         <a href="nosotros.html">Nosotros</a>
         <a href="blog.html">Blog</a>
         <a href="suscribete.html" class="active">Suscríbete</a>
+        <a href="login.html">Iniciar sesión</a>
       </nav>
     </div>
   </header>
@@ -38,5 +39,27 @@
   <footer class="footer">
     <p>&copy; 2025 Mi Sitio de Música. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Script para enviar datos al backend -->
+  <script>
+    document.querySelector(".subscribe-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nombre = e.target.nombre.value;
+      const email = e.target.email.value;
+
+      try {
+        const res = await fetch("/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, email })
+        });
+
+        const data = await res.json();
+        alert(data.message); // muestra respuesta del servidor
+      } catch (err) {
+        alert("Error al conectar con el servidor");
+      }
+    });
+  </script>
 </body>
 </html>
