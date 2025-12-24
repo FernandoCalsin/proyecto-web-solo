@@ -10,13 +10,13 @@ app.use(bodyParser.json());
 // Servir archivos estáticos (frontend)
 app.use(express.static(path.join(__dirname)));
 
-// Conexión a PostgreSQL (usa DATABASE_URL de tu hosting)
+// Conexión a PostgreSQL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
 });
 
-// Ruta para suscripción
+// Rutas
 app.post("/subscribe", async (req, res) => {
   const { nombre, email } = req.body;
   try {
@@ -26,7 +26,7 @@ app.post("/subscribe", async (req, res) => {
     );
     res.json({ message: "¡Gracias por suscribirte!" });
   } catch (err) {
-    if (err.code === "23505") { // email duplicado
+    if (err.code === "23505") {
       res.status(400).json({ message: "Este correo ya está registrado." });
     } else {
       console.error(err);
@@ -35,7 +35,6 @@ app.post("/subscribe", async (req, res) => {
   }
 });
 
-// Ruta para login
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -54,6 +53,5 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// Usar el puerto asignado por Koyeb o 3000 en local
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
